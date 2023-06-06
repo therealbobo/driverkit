@@ -171,6 +171,17 @@ func fetchUbuntuKernelURL(baseURL string, kr kernelrelease.KernelRelease, kernel
 			kernelVersion,
 			kr.Architecture.String(),
 		),
+		fmt.Sprintf(
+			"linux-%s-%d.%d-headers-%s-%s_%s-%s.%s_all.deb",
+			ubuntuFlavor,
+			kr.Major,
+			kr.Minor,
+			kr.Fullversion,
+			firstExtra,
+			kr.Fullversion,
+			firstExtra,
+			kernelVersion,
+		),
 	}
 
 	if ubuntuFlavor == "generic" {
